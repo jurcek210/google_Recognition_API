@@ -3,7 +3,7 @@
 ## Zakaj ta API
 **Google Activity Recognition API** omogoča aplikacijam zaznavanje in razvrščanje uporabnikove fizične aktivnosti, kot so hoja, tek, kolesarjenje, stanje na mestu ali vožnja z avtomobilom, brez potrebe po neposredni uporabi GPS-a. S tem se bistveno zmanjša poraba baterije, kar je še posebej pomembno pri dolgotrajnem delovanju aplikacij v ozadju.
 
-API je del **:contentReference[oaicite:0]{index=0}** in deluje tako, da zbira ter analizira podatke senzorjev mobilne naprave, predvsem pospeškomera in žiroskopa. Na podlagi teh podatkov uporablja Googlove algoritme strojnega učenja za prepoznavanje vzorcev gibanja in določanje verjetnosti posamezne aktivnosti.
+API je del Google Play services in deluje tako, da zbira ter analizira podatke senzorjev mobilne naprave, predvsem pospeškomera in žiroskopa. Na podlagi teh podatkov uporablja Googlove algoritme strojnega učenja za prepoznavanje vzorcev gibanja in določanje verjetnosti posamezne aktivnosti.
 
 Razvijalcem API omogoča, da aplikacije prilagodijo vedenju uporabnika v realnem času, na primer samodejno beleženje telesne aktivnosti, prilagajanje nastavitev aplikacije glede na gibanje ali izboljšanje uporabniške izkušnje brez dodatnega ročnega vnosa.
 
@@ -19,7 +19,7 @@ API je primeren za:
 ## Prednosti
 - **Nizka poraba energije**: API ne uporablja GPS-a, temveč senzorje naprave, kar bistveno zmanjša porabo baterije in omogoča dolgotrajno delovanje aplikacij v ozadju.  
 - **Samodejno zaznavanje aktivnosti**: uporabniku ni treba ročno izbirati ali potrjevati aktivnosti, saj API samodejno zazna trenutno gibanje uporabnika.  
-- **Enostavna integracija**: API je del **:contentReference[oaicite:0]{index=0}**, kar omogoča hitro in enostavno vključitev v Android aplikacije brez zapletene konfiguracije.  
+- **Enostavna integracija**: API je del Google Play services, kar omogoča hitro in enostavno vključitev v Android aplikacije brez zapletene konfiguracije.  
 - **Delovanje v ozadju**: aplikacije lahko prejemajo podatke o aktivnosti tudi takrat, ko niso aktivno uporabljene, kar izboljša uporabniško izkušnjo.  
 - **Visoka zanesljivost**: API uporablja Googlove modele strojnega učenja, ki se stalno izboljšujejo na podlagi velike količine podatkov, kar zagotavlja dobro natančnost zaznavanja.
 
@@ -45,7 +45,7 @@ Uporaba API-ja je praviloma brezplačna, vendar zahteva:
 ---
 
 ## Ocenitev števila uporabnikov
-Google Activity Recognition API je del osnovnih storitev Android ekosistema in se uporablja v zelo velikem številu aplikacij, predvsem na področju zdravja, fitnesa in pametnih storitev. Ker je vključen v **:contentReference[oaicite:0]{index=0}**, deluje na milijonih Android naprav po vsem svetu. Zaradi razširjenosti Android operacijskega sistema lahko ocenimo, da API dnevno uporablja zelo veliko število končnih uporabnikov, pogosto ne da bi se ti tega sploh zavedali.
+Google Activity Recognition API je del osnovnih storitev Android ekosistema in se uporablja v zelo velikem številu aplikacij, predvsem na področju zdravja, fitnesa in pametnih storitev. Ker je vključen v Google Play services, deluje na milijonih Android naprav po vsem svetu. Zaradi razširjenosti Android operacijskega sistema lahko ocenimo, da API dnevno uporablja zelo veliko število končnih uporabnikov, pogosto ne da bi se ti tega sploh zavedali.
 
 ---
 
