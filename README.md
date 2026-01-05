@@ -11,7 +11,6 @@ Razvijalcem API omogoča, da aplikacije prilagodijo vedenju uporabnika v realnem
 API je primeren za:
 - aplikacije za spremljanje telesne aktivnosti,
 - zdravstvene in fitnes aplikacije,
-- pametne mestne rešitve,
 - aplikacije, ki se prilagajajo uporabnikovemu gibanju.
 
 ---
