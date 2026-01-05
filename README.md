@@ -65,9 +65,4 @@ Vzdrževanje Google Activity Recognition API-ja v celoti izvaja Google, kar razv
 - **izboljšave natančnosti zaznavanja**, ki temeljijo na novih podatkih in izboljšanih algoritmih,
 - **posodobitve modelov strojnega učenja**, brez potrebe po spremembah na strani razvijalca.
 
-Na strani razvijalca je predvsem:
-- skrb za **posodabljanje aplikacije** in uporabo najnovejših verzij knjižnic,
-- zagotavljanje **združljivosti z novejšimi verzijami Android operacijskega sistema**,
-- spremljanje sprememb v dokumentaciji in pogojev uporabe API-ja,
-- skrb za pravilno obravnavo dovoljenj in varovanje zasebnosti uporabnikov.
 
