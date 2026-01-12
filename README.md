@@ -65,4 +65,85 @@ Vzdrževanje Google Activity Recognition API-ja v celoti izvaja Google, kar razv
 - **izboljšave natančnosti zaznavanja**, ki temeljijo na novih podatkih in izboljšanih algoritmih,
 - **posodobitve modelov strojnega učenja**, brez potrebe po spremembah na strani razvijalca.
 
+---
+
+## Primer uporabe
+
+Za uporabo Google Activity Recognition API so ključni naslednji koraki: pridobitev dovoljenj, inicializacija odjemalca, zahteva za posodobitve in prejemanje ter obdelava rezultatov.
+
+---
+
+### 1. Dovoljenja
+Za dostop do podatkov o telesni aktivnosti mora aplikacija imeti ustrezna dovoljenja. Od Android 10 (API 29) dalje mora uporabnik to dovoljenje potrditi tudi med izvajanjem aplikacije (runtime permission).
+
+Primer nastavitve dovoljenj v datoteki `AndroidManifest.xml`:
+
+```xml
+<manifest ...>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+</manifest>
+```
+
+Brez teh dovoljenj aplikacija ne more dostopati do podatkov senzorjev in zaznavati uporabnikove aktivnosti.
+
+### 2. Inicializacija odjemalca in zahteva za posodobitve
+V naslednjem koraku inicializiramo odjemalca za zaznavanje aktivnosti in sistemu sporočimo, kako pogosto želimo prejemati posodobitve.
+
+Primer v razredu ActivityRecognitionManager.kt:
+
+```kotlin
+// Inicializacija odjemalca
+private val client = ActivityRecognition.getClient(context)
+
+fun startTracking(
+    onSuccess: () -> Unit,
+    onFailure: (Exception) -> Unit
+) {
+    client.requestActivityUpdates(
+        3000L, // Interval zaznavanja v milisekundah
+        pendingIntent // BroadcastReceiver za prejem rezultatov
+    ).addOnSuccessListener {
+        onSuccess()
+    }.addOnFailureListener {
+        onFailure(it)
+    }
+}
+```
+
+S tem se aplikacija naroči na redne posodobitve, sistem pa ob zaznani spremembi aktivnosti sproži dogodek.
+
+### 3. Prejemanje in obdelava rezultatov
+
+Ko sistem zazna novo aktivnost, sproži BroadcastReceiver, kjer aplikacija obdela prejete podatke.
+
+Primer razreda ActivityReceiver.kt:
+
+
+```kotlin
+override fun onReceive(context: Context, intent: Intent) {
+    if (ActivityRecognitionResult.hasResult(intent)) {
+        val result = ActivityRecognitionResult.extractResult(intent)!!
+
+        // Najverjetnejša zaznana aktivnost
+        val activity = result.mostProbableActivity
+
+        // Izpis v Logcat
+        Log.d(
+            "ActivityRecognition",
+            "Detected: ${getActivityString(activity.type)} - ${activity.confidence}%"
+        )
+    }
+}
+```
+API ne vrne le ene same aktivnosti, temveč seznam možnih aktivnosti skupaj z ocenami zaupanja (confidence). Aplikacija običajno uporabi tisto z najvišjo verjetnostjo.
+
+### 4. Primer uporabe (Use Case)
+<img width="935" height="351" alt="image" src="https://github.com/user-attachments/assets/054bc496-7918-4f9d-a73f-4364b1d8b7ca" />
+
+
+
+
+
+
 
