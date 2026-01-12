@@ -144,7 +144,7 @@ API ne vrne le ene same aktivnosti, temveč seznam možnih aktivnosti skupaj z o
 ## Primer v moji aplikacije
 V moji aplikaciji, ki je namenjena tekačem, lahko uporabniki spremljajo, kako so se gibali med vadbo. Aplikacija prikazuje njihovo pot na zemljevidu ter razlikuje med hojo in tekom z uporabo Google Activity Recognition API.
 
-![1000011066](https://github.com/user-attachments/assets/47539a68-b5f7-49f3-9884-22af0f649b8d)
+<img width="460" height="978" alt="image" src="https://github.com/user-attachments/assets/15f3b5a5-580a-4237-8450-c38474cf78a9" />
 
 API se uporablja za zaznavanje vrste aktivnosti uporabnika (hoja ali tek) in na podlagi tega se posamezni deli poti obarvajo različno. Ob zagonu aplikacije ali na začetku vadbe API še nima dovolj podatkov za zanesljivo zaznavo aktivnosti, zato je pot v tem delu prikazana s sivo barvo. Siva barva se uporablja tudi v primerih, ko uporabnik ne hodi ali ne teče oziroma ko zaznana aktivnost ni dovolj zanesljiva.
 
