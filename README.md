@@ -138,12 +138,23 @@ override fun onReceive(context: Context, intent: Intent) {
 ```
 API ne vrne le ene same aktivnosti, temveč seznam možnih aktivnosti skupaj z ocenami zaupanja (confidence). Aplikacija običajno uporabi tisto z najvišjo verjetnostjo.
 
-### 4. Primer uporabe (Use Case)
+### 4. Primer v Logcat
 <img width="935" height="351" alt="image" src="https://github.com/user-attachments/assets/054bc496-7918-4f9d-a73f-4364b1d8b7ca" />
 
+## Primer v moji aplikacije
+V moji aplikaciji, ki je namenjena tekačem, lahko uporabniki spremljajo, kako so se gibali med vadbo. Aplikacija prikazuje njihovo pot na zemljevidu ter razlikuje med hojo in tekom z uporabo Google Activity Recognition API.
+
+![1000011066](https://github.com/user-attachments/assets/47539a68-b5f7-49f3-9884-22af0f649b8d)
+
+API se uporablja za zaznavanje vrste aktivnosti uporabnika (hoja ali tek) in na podlagi tega se posamezni deli poti obarvajo različno. Ob zagonu aplikacije ali na začetku vadbe API še nima dovolj podatkov za zanesljivo zaznavo aktivnosti, zato je pot v tem delu prikazana s sivo barvo. Siva barva se uporablja tudi v primerih, ko uporabnik ne hodi ali ne teče oziroma ko zaznana aktivnost ni dovolj zanesljiva.
+
+Ko API zazna, da uporabnik hodi, se pot na zemljevidu prikaže z modro barvo. To omogoča jasno vizualno ločevanje delov poti, kjer je uporabnik hodil.
+
+Na priloženi sliki pa je prikazan del poti, kjer je API zaznal tek. Ta del poti je označen z zeleno barvo, kar uporabniku omogoča hiter in pregleden vpogled v to, kdaj in kje je tekel.
+
+Takšen način prikaza poti izboljša uporabniško izkušnjo, saj uporabnik na preprost in intuitiven način vidi razlike med hojo in tekom ter dobi boljši pregled nad svojo vadbo.
 
 
-
-
+<img width="658" height="929" alt="image" src="https://github.com/user-attachments/assets/198f39af-ca75-453a-82c9-431f109a781d" />
 
 
